@@ -13,9 +13,8 @@ namespace WindowsFormsApplication5
 {
     public partial class Igra : Form
     {
-        string ime;
-        int poeni;
-        int figura = 0;
+        int poeni;  // Osvojeni poeni
+        int figura; // Koliko ima figura
 
         Figura[,] figure;
         Figura f;
@@ -25,7 +24,6 @@ namespace WindowsFormsApplication5
         public Igra(string ime)
         {
             InitializeComponent();
-            this.ime = ime;
             lblIme.Text = ime;
         }
 
@@ -130,15 +128,6 @@ namespace WindowsFormsApplication5
                 }
             }
             GameTimer.Start();
-        }
-
-        private void proveriPobedu()
-        {
-            if (f.Y == 1)
-            {
-                GameTimer.Stop();
-                MessageBox.Show($"Pobeda, osvojili ste {poeni} poena.");
-            }
         }
 
         private void GamePanel_Paint(object sender, PaintEventArgs e)
